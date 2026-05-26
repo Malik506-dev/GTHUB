@@ -1,0 +1,1284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>GT HUB</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:
+radial-gradient(circle at top left,#008cff22,transparent 20%),
+radial-gradient(circle at bottom right,#00c3ff18,transparent 20%),
+linear-gradient(135deg,#020817,#071224,#0d1833,#111f42);
+color:white;
+overflow-x:hidden;
+min-height:100vh;
+position:relative;
+}
+
+/* PARTICLES */
+
+body::before{
+content:'';
+position:fixed;
+width:200%;
+height:200%;
+background:
+radial-gradient(circle,#00aaff15 2px,transparent 2px);
+background-size:45px 45px;
+animation:particles 45s linear infinite;
+z-index:-3;
+}
+
+@keyframes particles{
+
+from{
+transform:translate(0,0);
+}
+
+to{
+transform:translate(-500px,-500px);
+}
+
+}
+
+/* GLOWS */
+
+.glow{
+position:fixed;
+width:500px;
+height:500px;
+border-radius:50%;
+filter:blur(120px);
+z-index:-2;
+pointer-events:none;
+}
+
+.glow1{
+background:#008cff30;
+top:-180px;
+left:-180px;
+}
+
+.glow2{
+background:#00c3ff25;
+bottom:-180px;
+right:-180px;
+}
+
+/* HEADER */
+
+header{
+position:sticky;
+top:0;
+z-index:999;
+backdrop-filter:blur(18px);
+background:rgba(0,0,0,0.25);
+border-bottom:1px solid rgba(255,255,255,0.05);
+padding:22px 20px;
+}
+
+.navbar{
+max-width:1450px;
+margin:auto;
+display:flex;
+justify-content:space-between;
+align-items:center;
+flex-wrap:wrap;
+gap:20px;
+}
+
+.logo{
+font-size:2.8rem;
+font-weight:800;
+letter-spacing:2px;
+background:linear-gradient(90deg,#00aeff,#5edcff,#00e1ff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.nav-links{
+display:flex;
+gap:15px;
+flex-wrap:wrap;
+}
+
+.nav-links button{
+padding:12px 22px;
+border:none;
+border-radius:16px;
+background:rgba(255,255,255,0.06);
+border:1px solid rgba(255,255,255,0.08);
+color:white;
+font-weight:600;
+cursor:pointer;
+transition:0.3s;
+}
+
+.nav-links button:hover{
+background:#008cff;
+transform:translateY(-3px);
+box-shadow:0 0 30px rgba(0,140,255,0.3);
+}
+
+/* HERO */
+
+.hero{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:60px 20px;
+position:relative;
+overflow:hidden;
+}
+
+.hero-content{
+max-width:1200px;
+text-align:center;
+z-index:2;
+}
+
+.hero h1{
+font-size:7rem;
+font-weight:800;
+margin-bottom:20px;
+background:linear-gradient(90deg,#00aeff,#65dbff,#00e1ff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+animation:heroGlow 4s ease infinite alternate;
+}
+
+@keyframes heroGlow{
+
+from{
+filter:drop-shadow(0 0 10px rgba(0,174,255,0.15));
+}
+
+to{
+filter:drop-shadow(0 0 45px rgba(0,174,255,0.45));
+}
+
+}
+
+.hero p{
+font-size:1.2rem;
+color:#d5d5d5;
+line-height:1.9;
+max-width:850px;
+margin:auto;
+margin-bottom:40px;
+}
+
+.hero-buttons{
+display:flex;
+justify-content:center;
+gap:15px;
+flex-wrap:wrap;
+}
+
+.hero-buttons button{
+padding:18px 32px;
+border:none;
+border-radius:18px;
+font-size:1rem;
+font-weight:700;
+cursor:pointer;
+transition:0.3s;
+}
+
+.primary-btn{
+background:linear-gradient(135deg,#0077ff,#00c3ff);
+color:white;
+box-shadow:0 0 40px rgba(0,174,255,0.25);
+}
+
+.secondary-btn{
+background:rgba(255,255,255,0.07);
+border:1px solid rgba(255,255,255,0.08);
+color:white;
+}
+
+.hero-buttons button:hover{
+transform:translateY(-4px) scale(1.03);
+}
+
+/* MAIN */
+
+.main-section{
+padding:40px 20px 100px;
+}
+
+.container{
+max-width:1450px;
+margin:auto;
+}
+
+.section-title{
+text-align:center;
+margin-bottom:60px;
+}
+
+.section-title h2{
+font-size:3.5rem;
+margin-bottom:15px;
+background:linear-gradient(90deg,#00aeff,#65dbff,#00e1ff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.section-title p{
+color:#d5d5d5;
+font-size:1.1rem;
+}
+
+.generator-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+gap:35px;
+}
+
+.generator-card{
+background:rgba(255,255,255,0.05);
+border:1px solid rgba(255,255,255,0.08);
+border-radius:35px;
+padding:40px;
+backdrop-filter:blur(20px);
+position:relative;
+overflow:hidden;
+transition:0.4s;
+}
+
+.generator-card::before{
+content:'';
+position:absolute;
+inset:0;
+background:linear-gradient(120deg,transparent,rgba(255,255,255,0.05),transparent);
+transform:translateX(-100%);
+transition:0.8s;
+}
+
+.generator-card:hover::before{
+transform:translateX(100%);
+}
+
+.generator-card:hover{
+transform:translateY(-10px);
+border-color:#00aeff;
+box-shadow:0 0 50px rgba(0,174,255,0.25);
+}
+
+.generator-icon{
+font-size:4rem;
+margin-bottom:20px;
+}
+
+.generator-card h2{
+font-size:2rem;
+margin-bottom:15px;
+}
+
+.generator-card p{
+color:#d5d5d5;
+line-height:1.8;
+margin-bottom:25px;
+}
+
+.generator-card input{
+width:100%;
+padding:18px;
+border:none;
+outline:none;
+border-radius:18px;
+background:rgba(255,255,255,0.07);
+border:1px solid rgba(255,255,255,0.08);
+color:white;
+font-size:1rem;
+margin-bottom:18px;
+transition:0.3s;
+}
+
+.generator-card input:focus{
+border-color:#00aeff;
+box-shadow:0 0 25px rgba(0,174,255,0.25);
+}
+
+.generate-btn{
+width:100%;
+padding:18px;
+border:none;
+border-radius:18px;
+background:linear-gradient(135deg,#0077ff,#00c3ff);
+color:white;
+font-size:1rem;
+font-weight:700;
+cursor:pointer;
+transition:0.3s;
+}
+
+.generate-btn:hover{
+transform:scale(1.02);
+box-shadow:0 0 35px rgba(0,174,255,0.35);
+}
+
+/* RESULT */
+
+.result{
+margin-top:25px;
+padding:25px;
+border-radius:22px;
+background:rgba(255,255,255,0.04);
+display:none;
+animation:fadeIn 0.4s ease;
+}
+
+.success{
+border:1px solid rgba(0,255,170,0.2);
+color:#00ffaa;
+}
+
+.error{
+border:1px solid rgba(255,90,90,0.2);
+color:#ff6666;
+}
+
+.loading{
+border:1px solid rgba(0,174,255,0.2);
+color:#00aeff;
+}
+
+.download-btn{
+display:inline-block;
+margin-top:20px;
+padding:14px 24px;
+border-radius:16px;
+background:#00aeff;
+color:white;
+text-decoration:none;
+font-weight:700;
+transition:0.3s;
+}
+
+.download-btn:hover{
+background:#008cff;
+transform:translateY(-3px);
+}
+
+/* SCANNER */
+
+.scanner{
+width:100%;
+height:6px;
+border-radius:20px;
+background:rgba(255,255,255,0.08);
+overflow:hidden;
+margin-top:20px;
+}
+
+.scanner div{
+height:100%;
+width:30%;
+background:linear-gradient(90deg,#00aeff,#00e1ff);
+animation:scan 1s linear infinite;
+border-radius:20px;
+}
+
+@keyframes scan{
+
+from{
+transform:translateX(-120%);
+}
+
+to{
+transform:translateX(400%);
+}
+
+}
+
+/* POPUP */
+
+.popup{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,0.75);
+backdrop-filter:blur(12px);
+display:none;
+justify-content:center;
+align-items:center;
+padding:20px;
+z-index:9999;
+}
+
+.popup-card{
+width:100%;
+max-width:900px;
+background:#091528;
+border-radius:35px;
+overflow:hidden;
+border:1px solid rgba(255,255,255,0.08);
+animation:popupAnim 0.3s ease;
+position:relative;
+}
+
+@keyframes popupAnim{
+
+from{
+opacity:0;
+transform:scale(0.9);
+}
+
+to{
+opacity:1;
+transform:scale(1);
+}
+
+}
+
+.popup-banner{
+width:100%;
+height:320px;
+object-fit:cover;
+}
+
+.popup-content{
+padding:35px;
+}
+
+.popup-content h2{
+font-size:2.3rem;
+margin-bottom:15px;
+}
+
+.popup-content p{
+line-height:1.8;
+color:#d5d5d5;
+margin-bottom:20px;
+}
+
+.close-popup{
+position:absolute;
+top:18px;
+right:18px;
+width:45px;
+height:45px;
+border:none;
+border-radius:50%;
+background:#ff4d4d;
+color:white;
+font-size:1.2rem;
+cursor:pointer;
+}
+
+/* FOOTER */
+
+footer{
+margin-top:100px;
+padding:45px 20px;
+text-align:center;
+background:rgba(0,0,0,0.25);
+border-top:1px solid rgba(255,255,255,0.08);
+color:#d5d5d5;
+}
+
+/* ANIMATIONS */
+
+@keyframes fadeIn{
+
+from{
+opacity:0;
+transform:translateY(15px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:4rem;
+}
+
+.section-title h2{
+font-size:2.5rem;
+}
+
+.popup-banner{
+height:220px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="glow glow1"></div>
+<div class="glow glow2"></div>
+
+<header>
+
+<div class="navbar">
+
+<div class="logo">
+
+GT HUB
+
+</div>
+
+<div class="nav-links">
+
+<button onclick="scrollToGenerators()">
+
+Generators
+
+</button>
+
+<button onclick="window.open('https://discord.gg/game-tube-1259592689473818645')">
+
+Discord
+
+</button>
+
+</div>
+
+</div>
+
+</header>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>
+
+GT HUB
+
+</h1>
+
+<p>
+
+Advanced Steam Lua & Manifest Generator + Steam Accounts Generator
+Powered By GT HUB Infrastructure.
+
+</p>
+
+<div class="hero-buttons">
+
+<button class="primary-btn"
+onclick="scrollToGenerators()">
+
+Explore Generators
+
+</button>
+
+<button class="secondary-btn"
+onclick="window.open('https://discord.gg/game-tube-1259592689473818645')">
+
+Join Discord
+
+</button>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="main-section" id="generators">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>
+
+Generators
+
+</h2>
+
+<p>
+
+Generate Steam Files Instantly
+
+</p>
+
+</div>
+
+<div class="generator-grid">
+
+<!-- MANIFEST -->
+
+<div class="generator-card">
+
+<div class="generator-icon">
+
+🧩
+
+</div>
+
+<h2>
+
+Lua & Manifest
+
+</h2>
+
+<p>
+
+Generate Steam Lua & Manifest Files.
+
+</p>
+
+<input
+type="text"
+id="manifestInput"
+placeholder="Enter Steam AppID">
+
+<button
+class="generate-btn"
+onclick="generateManifest()">
+
+Generate Files
+
+</button>
+
+<div class="result" id="manifestResult"></div>
+
+</div>
+
+<!-- ACCOUNTS -->
+
+<div class="generator-card">
+
+<div class="generator-icon">
+
+🎮
+
+</div>
+
+<h2>
+
+Steam Accounts
+
+</h2>
+
+<p>
+
+Generate Steam Accounts Instantly.
+
+</p>
+
+<input
+type="text"
+id="accountsInput"
+placeholder="Enter Steam AppID">
+
+<button
+class="generate-btn"
+onclick="generateAccounts()">
+
+Generate Accounts
+
+</button>
+
+<div class="result" id="accountsResult"></div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- POPUP -->
+
+<div class="popup" id="popup">
+
+<div class="popup-card">
+
+<button class="close-popup"
+onclick="closePopup()">
+
+✕
+
+</button>
+
+<img
+id="popupBanner"
+class="popup-banner"
+src="">
+
+<div class="popup-content">
+
+<h2 id="popupTitle">
+
+Loading...
+
+</h2>
+
+<p id="popupDesc">
+
+Loading Game Info...
+
+</p>
+
+<a
+id="popupDownload"
+class="download-btn"
+href="#"
+target="_blank">
+
+Download
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<footer>
+
+GT HUB © 2026 — Powered By GAME TUBE
+
+</footer>
+
+<script>
+
+/*
+=====================================
+DATABASE LINKS
+=====================================
+*/
+
+/*
+USE THESE FORMATS ONLY:
+
+https://raw.githubusercontent.com/USERNAME/REPO/refs/heads/main/file.json
+
+DON'T USE:
+raw.githubusercontent.com/...
+
+because sometimes CORS/cache issue aata hai
+*/
+
+const MANIFEST_JSON =
+"https://raw.githubusercontent.com/Malik506-dev/mhmmm-music/refs/heads/main/rar_mappings.json";
+
+const ACCOUNTS_JSON =
+"https://raw.githubusercontent.com/Malik506-dev/mhmmm-music/refs/heads/main/accounts_mappings.json";
+
+/*
+=====================================
+CUSTOM DOMAIN SUPPORT
+=====================================
+
+PAGEDROP CUSTOM DOMAIN:
+
+1. Buy domain
+2. Open Pagedrop
+3. Domain settings
+4. Add custom domain
+5. Done
+
+NO CODE REQUIRED
+*/
+
+/*
+=====================================
+AUTO UPDATE SYSTEM
+=====================================
+
+IF YOU HOST ON GITHUB PAGES:
+Website auto updates after github commit
+
+IF YOU HOST ON PAGEDROP:
+You manually paste new html there
+
+OR
+
+Connect github repo in pagedrop dashboard
+if pagedrop supports github sync in future
+*/
+
+/*
+=====================================
+BOT API
+=====================================
+*/
+
+const BOT_API =
+"https://YOUR-BOT-API.com";
+
+/*
+=====================================
+DATABASES
+=====================================
+*/
+
+let manifestDatabase = {};
+let accountsDatabase = {};
+
+/*
+=====================================
+LOAD DATABASES
+=====================================
+*/
+
+async function loadDatabases(){
+
+try{
+
+const manifestResponse =
+await fetch(MANIFEST_JSON + "?t=" + Date.now());
+
+manifestDatabase =
+await manifestResponse.json();
+
+console.log("Manifest Loaded");
+
+}catch(error){
+
+console.log("Manifest Error:",error);
+
+}
+
+try{
+
+const accountsResponse =
+await fetch(ACCOUNTS_JSON + "?t=" + Date.now());
+
+accountsDatabase =
+await accountsResponse.json();
+
+console.log("Accounts Loaded");
+
+}catch(error){
+
+console.log("Accounts Error:",error);
+
+}
+
+}
+
+loadDatabases();
+
+/*
+=====================================
+SCROLL
+=====================================
+*/
+
+function scrollToGenerators(){
+
+document.getElementById('generators')
+.scrollIntoView({
+
+behavior:'smooth'
+
+});
+
+}
+
+/*
+=====================================
+STEAM API
+=====================================
+*/
+
+async function fetchSteamGame(appid){
+
+try{
+
+const response =
+await fetch(
+`https://store.steampowered.com/api/appdetails?appids=${appid}`
+);
+
+const data =
+await response.json();
+
+if(data[appid].success){
+
+return data[appid].data;
+
+}
+
+}catch(error){
+
+console.log(error);
+
+}
+
+return null;
+
+}
+
+/*
+=====================================
+POPUP
+=====================================
+*/
+
+function showPopup(game,downloadLink){
+
+document.getElementById('popup').style.display='flex';
+
+document.getElementById('popupTitle')
+.innerText=game.name || "Steam Game";
+
+document.getElementById('popupDesc')
+.innerText=
+game.short_description ||
+"No Description";
+
+document.getElementById('popupBanner')
+.src=
+game.header_image ||
+"";
+
+document.getElementById('popupDownload')
+.href=
+downloadLink;
+
+}
+
+function closePopup(){
+
+document.getElementById('popup').style.display='none';
+
+}
+
+/*
+=====================================
+MANIFEST
+=====================================
+*/
+
+async function generateManifest(){
+
+const appId =
+document.getElementById('manifestInput').value.trim();
+
+const result =
+document.getElementById('manifestResult');
+
+if(!/^\d+$/.test(appId)){
+
+result.style.display='block';
+
+result.className='result error';
+
+result.innerHTML='Invalid Steam AppID';
+
+return;
+
+}
+
+result.style.display='block';
+
+result.className='result loading';
+
+result.innerHTML=`
+
+Generating Files...
+
+<div class="scanner">
+
+<div></div>
+
+</div>
+
+`;
+
+const game =
+await fetchSteamGame(appId);
+
+await new Promise(resolve=>setTimeout(resolve,1800));
+
+if(manifestDatabase[appId]){
+
+const data =
+manifestDatabase[appId];
+
+result.className='result success';
+
+result.innerHTML=`
+
+Files Successfully Generated.
+
+<a
+class="download-btn"
+href="${data.link}"
+target="_blank">
+
+Download Files
+
+</a>
+
+`;
+
+showPopup(
+
+game || {},
+
+data.link
+
+);
+
+}else{
+
+result.className='result error';
+
+result.innerHTML=`
+
+Files Not Available.
+
+Request Sent To Server.
+
+`;
+
+}
+
+/*
+OPTIONAL BOT REQUEST
+
+fetch(`${BOT_API}/request`,{
+method:'POST',
+headers:{
+'Content-Type':'application/json'
+},
+body:JSON.stringify({
+appid:appId,
+type:'manifest'
+})
+});
+
+*/
+
+}
+
+/*
+=====================================
+ACCOUNTS
+=====================================
+*/
+
+async function generateAccounts(){
+
+const appId =
+document.getElementById('accountsInput').value.trim();
+
+const result =
+document.getElementById('accountsResult');
+
+if(!/^\d+$/.test(appId)){
+
+result.style.display='block';
+
+result.className='result error';
+
+result.innerHTML='Invalid Steam AppID';
+
+return;
+
+}
+
+result.style.display='block';
+
+result.className='result loading';
+
+result.innerHTML=`
+
+Generating Accounts...
+
+<div class="scanner">
+
+<div></div>
+
+</div>
+
+`;
+
+const game =
+await fetchSteamGame(appId);
+
+await new Promise(resolve=>setTimeout(resolve,1800));
+
+if(accountsDatabase[appId]){
+
+const data =
+accountsDatabase[appId];
+
+result.className='result success';
+
+result.innerHTML=`
+
+Accounts Successfully Generated.
+
+<a
+class="download-btn"
+href="${data.link}"
+target="_blank">
+
+Download Accounts
+
+</a>
+
+`;
+
+showPopup(
+
+game || {},
+
+data.link
+
+);
+
+}else{
+
+result.className='result error';
+
+result.innerHTML=`
+
+Accounts Not Available.
+
+Request Sent To Server.
+
+`;
+
+}
+
+/*
+OPTIONAL BOT REQUEST
+
+fetch(`${BOT_API}/request`,{
+method:'POST',
+headers:{
+'Content-Type':'application/json'
+},
+body:JSON.stringify({
+appid:appId,
+type:'accounts'
+})
+});
+
+*/
+
+}
+
+/*
+=====================================
+ENTER SUPPORT
+=====================================
+*/
+
+document.getElementById('manifestInput')
+.addEventListener('keypress',function(e){
+
+if(e.key==='Enter'){
+
+generateManifest();
+
+}
+
+});
+
+document.getElementById('accountsInput')
+.addEventListener('keypress',function(e){
+
+if(e.key==='Enter'){
+
+generateAccounts();
+
+}
+
+});
+
+/*
+=====================================
+MOUSE GLOW
+=====================================
+*/
+
+document.addEventListener('mousemove',e=>{
+
+const glow1 =
+document.querySelector('.glow1');
+
+const glow2 =
+document.querySelector('.glow2');
+
+glow1.style.transform=
+`translate(${e.clientX/35}px,${e.clientY/35}px)`;
+
+glow2.style.transform=
+`translate(-${e.clientX/40}px,-${e.clientY/40}px)`;
+
+});
+
+/*
+=====================================
+AUTO REFRESH DATABASE
+=====================================
+*/
+
+setInterval(async()=>{
+
+await loadDatabases();
+
+console.log("Databases Refreshed");
+
+},300000);
+
+/*
+=====================================
+CLOSE POPUP OUTSIDE CLICK
+=====================================
+*/
+
+window.onclick=function(event){
+
+const popup =
+document.getElementById('popup');
+
+if(event.target===popup){
+
+closePopup();
+
+}
+
+};
+
+</script>
+
+</body>
+
+</html>
