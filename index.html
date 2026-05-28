@@ -60,7 +60,7 @@ transform:translate(-500px,-500px);
 
 }
 
-/* GLOWS */
+/* GLOW */
 
 .glow{
 position:fixed;
@@ -93,7 +93,7 @@ z-index:999;
 backdrop-filter:blur(18px);
 background:rgba(0,0,0,0.25);
 border-bottom:1px solid rgba(255,255,255,0.05);
-padding:22px 20px;
+padding:20px;
 }
 
 .navbar{
@@ -339,8 +339,6 @@ transform:scale(1.02);
 box-shadow:0 0 35px rgba(0,174,255,0.35);
 }
 
-/* RESULT */
-
 .result{
 margin-top:25px;
 padding:25px;
@@ -382,8 +380,6 @@ background:#008cff;
 transform:translateY(-3px);
 }
 
-/* SCANNER */
-
 .scanner{
 width:100%;
 height:6px;
@@ -412,8 +408,6 @@ transform:translateX(400%);
 }
 
 }
-
-/* POPUP */
 
 .popup{
 position:fixed;
@@ -456,6 +450,7 @@ transform:scale(1);
 width:100%;
 height:320px;
 object-fit:cover;
+background:#0d1833;
 }
 
 .popup-content{
@@ -487,8 +482,6 @@ font-size:1.2rem;
 cursor:pointer;
 }
 
-/* FOOTER */
-
 footer{
 margin-top:100px;
 padding:45px 20px;
@@ -497,8 +490,6 @@ background:rgba(0,0,0,0.25);
 border-top:1px solid rgba(255,255,255,0.08);
 color:#d5d5d5;
 }
-
-/* ANIMATIONS */
 
 @keyframes fadeIn{
 
@@ -513,8 +504,6 @@ transform:translateY(0);
 }
 
 }
-
-/* MOBILE */
 
 @media(max-width:768px){
 
@@ -546,23 +535,17 @@ height:220px;
 <div class="navbar">
 
 <div class="logo">
-
 GT HUB
-
 </div>
 
 <div class="nav-links">
 
 <button onclick="scrollToGenerators()">
-
 Generators
-
 </button>
 
 <button onclick="window.open('https://discord.gg/game-tube-1259592689473818645')">
-
 Discord
-
 </button>
 
 </div>
@@ -576,32 +559,23 @@ Discord
 <div class="hero-content">
 
 <h1>
-
 GT HUB
-
 </h1>
 
 <p>
-
-Advanced Steam Lua & Manifest Generator + Steam Accounts Generator
+Advanced Steam Lua & Manifest Generator + Steam Accounts Generator.
 Powered By GT HUB Infrastructure.
-
 </p>
 
 <div class="hero-buttons">
 
-<button class="primary-btn"
-onclick="scrollToGenerators()">
-
+<button class="primary-btn" onclick="scrollToGenerators()">
 Explore Generators
-
 </button>
 
 <button class="secondary-btn"
 onclick="window.open('https://discord.gg/game-tube-1259592689473818645')">
-
 Join Discord
-
 </button>
 
 </div>
@@ -617,15 +591,11 @@ Join Discord
 <div class="section-title">
 
 <h2>
-
 Generators
-
 </h2>
 
 <p>
-
 Generate Steam Files Instantly
-
 </p>
 
 </div>
@@ -637,21 +607,15 @@ Generate Steam Files Instantly
 <div class="generator-card">
 
 <div class="generator-icon">
-
 🧩
-
 </div>
 
 <h2>
-
 Lua & Manifest
-
 </h2>
 
 <p>
-
-Generate Steam Lua & Manifest Files.
-
+Generate Steam Lua & Manifest Files Instantly.
 </p>
 
 <input
@@ -662,9 +626,7 @@ placeholder="Enter Steam AppID">
 <button
 class="generate-btn"
 onclick="generateManifest()">
-
 Generate Files
-
 </button>
 
 <div class="result" id="manifestResult"></div>
@@ -676,21 +638,15 @@ Generate Files
 <div class="generator-card">
 
 <div class="generator-icon">
-
 🎮
-
 </div>
 
 <h2>
-
 Steam Accounts
-
 </h2>
 
 <p>
-
 Generate Steam Accounts Instantly.
-
 </p>
 
 <input
@@ -701,9 +657,7 @@ placeholder="Enter Steam AppID">
 <button
 class="generate-btn"
 onclick="generateAccounts()">
-
 Generate Accounts
-
 </button>
 
 <div class="result" id="accountsResult"></div>
@@ -724,9 +678,7 @@ Generate Accounts
 
 <button class="close-popup"
 onclick="closePopup()">
-
 ✕
-
 </button>
 
 <img
@@ -737,15 +689,11 @@ src="">
 <div class="popup-content">
 
 <h2 id="popupTitle">
-
 Loading...
-
 </h2>
 
 <p id="popupDesc">
-
 Loading Game Info...
-
 </p>
 
 <a
@@ -753,9 +701,7 @@ id="popupDownload"
 class="download-btn"
 href="#"
 target="_blank">
-
 Download
-
 </a>
 
 </div>
@@ -765,9 +711,7 @@ Download
 </div>
 
 <footer>
-
 GT HUB © 2026 — Powered By GAME TUBE
-
 </footer>
 
 <script>
@@ -778,64 +722,11 @@ DATABASE LINKS
 =====================================
 */
 
-/*
-USE THESE FORMATS ONLY:
-
-https://raw.githubusercontent.com/USERNAME/REPO/refs/heads/main/file.json
-
-DON'T USE:
-raw.githubusercontent.com/...
-
-because sometimes CORS/cache issue aata hai
-*/
-
 const MANIFEST_JSON =
-"https://raw.githubusercontent.com/Malik506-dev/mhmmm-music/refs/heads/main/rar_mappings.json";
+"https://raw.githubusercontent.com/Malik506-dev/GTHUB/main/rar_mappings.json";
 
 const ACCOUNTS_JSON =
-"https://raw.githubusercontent.com/Malik506-dev/mhmmm-music/refs/heads/main/accounts_mappings.json";
-
-/*
-=====================================
-CUSTOM DOMAIN SUPPORT
-=====================================
-
-PAGEDROP CUSTOM DOMAIN:
-
-1. Buy domain
-2. Open Pagedrop
-3. Domain settings
-4. Add custom domain
-5. Done
-
-NO CODE REQUIRED
-*/
-
-/*
-=====================================
-AUTO UPDATE SYSTEM
-=====================================
-
-IF YOU HOST ON GITHUB PAGES:
-Website auto updates after github commit
-
-IF YOU HOST ON PAGEDROP:
-You manually paste new html there
-
-OR
-
-Connect github repo in pagedrop dashboard
-if pagedrop supports github sync in future
-*/
-
-/*
-=====================================
-BOT API
-=====================================
-*/
-
-const BOT_API =
-"https://YOUR-BOT-API.com";
+"https://raw.githubusercontent.com/Malik506-dev/GTHUB/main/accounts_mappings.json";
 
 /*
 =====================================
@@ -857,12 +748,12 @@ async function loadDatabases(){
 try{
 
 const manifestResponse =
-await fetch(MANIFEST_JSON + "?t=" + Date.now());
+await fetch(MANIFEST_JSON);
 
 manifestDatabase =
 await manifestResponse.json();
 
-console.log("Manifest Loaded");
+console.log("Manifest Database Loaded");
 
 }catch(error){
 
@@ -873,12 +764,12 @@ console.log("Manifest Error:",error);
 try{
 
 const accountsResponse =
-await fetch(ACCOUNTS_JSON + "?t=" + Date.now());
+await fetch(ACCOUNTS_JSON);
 
 accountsDatabase =
 await accountsResponse.json();
 
-console.log("Accounts Loaded");
+console.log("Accounts Database Loaded");
 
 }catch(error){
 
@@ -925,7 +816,11 @@ await fetch(
 const data =
 await response.json();
 
-if(data[appid].success){
+if(
+data &&
+data[appid] &&
+data[appid].success
+){
 
 return data[appid].data;
 
@@ -933,11 +828,19 @@ return data[appid].data;
 
 }catch(error){
 
-console.log(error);
+console.log("Steam API Error:",error);
 
 }
 
-return null;
+return {
+
+name:"Steam Game",
+short_description:
+"Game information currently unavailable.",
+header_image:
+`https://cdn.cloudflare.steamstatic.com/steam/apps/${appid}/header.jpg`
+
+};
 
 }
 
@@ -952,27 +855,47 @@ function showPopup(game,downloadLink){
 document.getElementById('popup').style.display='flex';
 
 document.getElementById('popupTitle')
-.innerText=game.name || "Steam Game";
+.innerText =
+game.name || "Steam Game";
 
 document.getElementById('popupDesc')
-.innerText=
+.innerText =
 game.short_description ||
-"No Description";
+"No Description Available";
 
 document.getElementById('popupBanner')
-.src=
+.src =
 game.header_image ||
 "";
 
 document.getElementById('popupDownload')
-.href=
+.href =
 downloadLink;
 
 }
 
+/*
+=====================================
+CLOSE POPUP
+=====================================
+*/
+
 function closePopup(){
 
 document.getElementById('popup').style.display='none';
+
+}
+
+window.onclick=function(event){
+
+const popup =
+document.getElementById('popup');
+
+if(event.target===popup){
+
+closePopup();
+
+}
 
 }
 
@@ -1011,9 +934,7 @@ result.innerHTML=`
 Generating Files...
 
 <div class="scanner">
-
 <div></div>
-
 </div>
 
 `;
@@ -1021,7 +942,7 @@ Generating Files...
 const game =
 await fetchSteamGame(appId);
 
-await new Promise(resolve=>setTimeout(resolve,1800));
+await new Promise(resolve=>setTimeout(resolve,1500));
 
 if(manifestDatabase[appId]){
 
@@ -1033,6 +954,8 @@ result.className='result success';
 result.innerHTML=`
 
 Files Successfully Generated.
+
+<br>
 
 <a
 class="download-btn"
@@ -1046,11 +969,8 @@ Download Files
 `;
 
 showPopup(
-
-game || {},
-
+game,
 data.link
-
 );
 
 }else{
@@ -1061,27 +981,9 @@ result.innerHTML=`
 
 Files Not Available.
 
-Request Sent To Server.
-
 `;
 
 }
-
-/*
-OPTIONAL BOT REQUEST
-
-fetch(`${BOT_API}/request`,{
-method:'POST',
-headers:{
-'Content-Type':'application/json'
-},
-body:JSON.stringify({
-appid:appId,
-type:'manifest'
-})
-});
-
-*/
 
 }
 
@@ -1120,9 +1022,7 @@ result.innerHTML=`
 Generating Accounts...
 
 <div class="scanner">
-
 <div></div>
-
 </div>
 
 `;
@@ -1130,7 +1030,7 @@ Generating Accounts...
 const game =
 await fetchSteamGame(appId);
 
-await new Promise(resolve=>setTimeout(resolve,1800));
+await new Promise(resolve=>setTimeout(resolve,1500));
 
 if(accountsDatabase[appId]){
 
@@ -1142,6 +1042,8 @@ result.className='result success';
 result.innerHTML=`
 
 Accounts Successfully Generated.
+
+<br>
 
 <a
 class="download-btn"
@@ -1155,11 +1057,8 @@ Download Accounts
 `;
 
 showPopup(
-
-game || {},
-
+game,
 data.link
-
 );
 
 }else{
@@ -1170,27 +1069,9 @@ result.innerHTML=`
 
 Accounts Not Available.
 
-Request Sent To Server.
-
 `;
 
 }
-
-/*
-OPTIONAL BOT REQUEST
-
-fetch(`${BOT_API}/request`,{
-method:'POST',
-headers:{
-'Content-Type':'application/json'
-},
-body:JSON.stringify({
-appid:appId,
-type:'accounts'
-})
-});
-
-*/
 
 }
 
@@ -1243,39 +1124,6 @@ glow2.style.transform=
 `translate(-${e.clientX/40}px,-${e.clientY/40}px)`;
 
 });
-
-/*
-=====================================
-AUTO REFRESH DATABASE
-=====================================
-*/
-
-setInterval(async()=>{
-
-await loadDatabases();
-
-console.log("Databases Refreshed");
-
-},300000);
-
-/*
-=====================================
-CLOSE POPUP OUTSIDE CLICK
-=====================================
-*/
-
-window.onclick=function(event){
-
-const popup =
-document.getElementById('popup');
-
-if(event.target===popup){
-
-closePopup();
-
-}
-
-};
 
 </script>
 
